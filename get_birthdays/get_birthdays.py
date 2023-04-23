@@ -71,9 +71,11 @@ def main() -> None:
     while True:
         user_input = input('Specify the path to the settings.txt file or press enter to cancelling: ')
         if os.path.isfile(user_input):
+            print('Processing...')
             print(f'From {current_datetime} to {next_week}')
             get_birthdays_per_week(get_users_list(user_input))
-            continue
+            print('Successful')
+            break
         elif user_input == '':
             break
         else:
